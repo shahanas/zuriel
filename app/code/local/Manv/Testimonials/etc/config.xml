@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<config>
+ 
+  <modules>
+    <Manv_Testimonials>
+      <version>0.1.0</version>
+    </Manv_Testimonials>
+  </modules>
+  <frontend>
+    <routers>
+      <testimonials>
+        <use>standard</use>
+          <args>
+            <module>Manv_Testimonials</module>
+            <frontName>testimonials</frontName>
+          </args>
+      </testimonials>
+    </routers>
+		<!--<layout>-->
+		  <!--<updates>-->
+			<!--<testimonials>-->
+			  <!--<file>codilar/testimonials.xml</file>-->
+			<!--</testimonials>-->
+		  <!--</updates>-->
+		<!--</layout>-->
+  </frontend>
+  <global>
+    <helpers>
+      <testimonials>
+        <class>Manv_Testimonials_Helper</class>
+      </testimonials>
+    </helpers>
+	<blocks>
+	  <testimonials>
+		<class>Manv_Testimonials_Block</class>
+	  </testimonials>
+	</blocks>
+	<models>
+	  <testimonials>
+		<class>Manv_Testimonials_Model</class>
+		<resourceModel>testimonials_mysql4</resourceModel>
+	  </testimonials>
+	  <testimonials_mysql4>
+		<class>Manv_Testimonials_Model_Mysql4</class>
+		<entities>		  
+			  <testimonials>
+				<table>manv_testimonials</table>
+			  </testimonials>
+        </entities>
+	  </testimonials_mysql4>
+	</models>
+	<resources>
+	  <testimonials_setup>
+		<setup>
+		  <module>Manv_Testimonials</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </testimonials_setup>
+	  <testimonials_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </testimonials_write>
+	  <testimonials_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </testimonials_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <testimonials>
+	    <use>admin</use>
+		<args>
+		  <module>Manv_Testimonials</module>
+		  <frontName>testimonials</frontName>
+		</args>
+	  </testimonials>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <testimonials module="testimonials">
+		<title>Testimonials</title>
+		<sort_order>100</sort_order>
+		<children>
+		   <testimonials module="testimonials">
+		    <title>Manage Testimonials</title>
+			<sort_order>0</sort_order>
+			<action>testimonials/adminhtml_testimonials</action>
+		  </testimonials>
+		</children>
+	  </testimonials>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<testimonials translate="title" module="testimonials">
+			  <title>Testimonials</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <testimonialsbackend translate="title">
+			<title>Testimonials</title>
+		  </testimonialsbackend>
+		  <testimonials translate="title">
+			<title>Manage Testimonials</title>
+			<sort_order>0</sort_order>
+		  </testimonials>
+			  </children>
+			</testimonials>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<testimonials>
+		  <file>testimonials.xml</file>
+		</testimonials>
+	  </updates>
+	</layout>
+  </adminhtml>
+<adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <Manv>
+                                        <title>Manv Testimonials</title>
+                                    </Manv>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
+</config> 

@@ -1,0 +1,137 @@
+<!-- NOT USING THIS TEMPLATES -->
+
+<?php $style =$this->getTestimonialsStyle(); ?>
+<?php $enab=$this->getTestimonialsEnabled();
+if($enab==1) { ?>
+<?php $view=$this->getTestimonialsView();
+ ?>
+<?php $wid=$this->getTestimonialsImageWidth(); ?>
+<?php $hei=$this->getTestimonialsImageHeight(); ?>
+<?php $faceimg=$this->getTestimonialsImages(); ?>
+
+
+<!-- include Cycle plugin -->
+
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/jquery.cycle.all.latest.js') ?>"></script>
+<?php if($style==1) { ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+   jQuery('#testimonials')
+	.cycle({
+        fx: 'fade', // choose your transition type, ex: fade, scrollUp, scrollRight, shuffle
+     });
+});
+</script>
+<?php } ?>
+
+
+<?php if($style==2) { ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+   jQuery('#testimonials')
+	.cycle({
+        fx: 'shuffle', // choose your transition type, ex: fade, scrollUp, scrollRight, shuffle
+     });
+});
+</script>
+<?php } ?>
+
+<?php if($style==3) { ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+   jQuery('#testimonials')
+	.cycle({
+        fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, scrollRight, shuffle
+     });
+});
+</script>
+<?php } ?>
+
+
+<?php if($style==4) { ?>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('#testimonials')
+	.cycle({
+        fx: 'scrollRight', // choose your transition type, ex: fade, scrollUp, scrollRight, shuffle
+     });
+});
+</script>
+<?php } ?>
+
+
+
+
+
+
+<?php $testi=$this->ShowTestimonialsRecords(); ?>
+
+<?php $result = $testi->fetchAll(); ?>
+<?php $img=Mage::getBaseUrl();
+$imgr=str_replace('/index.php', '', $img); ?>
+
+<style type="text/css" media="screen">
+ .mtimg img{ height:200px; width:150px;}
+ </style>
+ <script type="text/javascript">
+   var it=0; var im; var iu=0; 	var opc=0.0; var um;
+    function intopa()
+ 			{
+			 var xt=document.getElementById("05mtxw");
+			um=setTimeout("intopa()",100);
+			 xt.style.opacity=opc;
+			 opc+=0.05;
+			 if(opc>1)
+			 		{ clearTimeout(um); opc=0.2; }
+			}
+ function xwt05img()
+	 {
+ var xt=document.getElementById("05mtxw");
+ it++;
+ xt.innerHTML=img[it];
+
+			intopa();
+  im=setTimeout("xwt05img()",4000);
+ 			if(it >img.length-2)
+				{
+				it=0;
+				}
+
+
+ 	}
+ function xwt06img()
+ 			{
+img=new Array();
+<?php $m=1; foreach($result as $values) { ?>
+
+img[<?php echo $m; ?>]="<?php echo $values['message']; ?>";
+
+<?php $m++; } ?>
+		if(!it)
+		{ it=0;
+	xwt05img();
+		}
+
+ 			}
+
+ window.onload=function() { xwt06img(); }
+ </script>
+<span><img src="<?php echo $this->getSkinUrl('images') ?>/test_1.png" width="23" height="17" /></span>
+<div id="05mtxw" class="eye-test_con">
+
+</div>
+<a href="<?php echo $this->getUrl('testimonial'); ?>">Read all independent Trust Reviews  >> </a>
+
+
+
+
+
+<!--end testimonials-->
+<?php  ?>
+<?php } else {
+echo "For enable testimonials go to admin->system->configuration->manv testimonials->setting->enable->yes";
+}
+?>
+
+
+

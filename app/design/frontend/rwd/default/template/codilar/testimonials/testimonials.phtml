@@ -1,0 +1,33 @@
+<!-- NOT USING THIS TEMPLATES -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<?php $style =$this->getTestimonialsStyle(); ?>
+<?php $enab=$this->getTestimonialsEnabled(); 
+if($enab==1) { ?>
+<?php  $view=$this->getTestimonialsView(); 
+  ?>
+<?php $wid=$this->getTestimonialsImageWidth(); ?>
+<?php $hei=$this->getTestimonialsImageHeight(); ?>
+<?php $faceimg=$this->getTestimonialsImages(); ?>
+
+<?php $testi=$this->ShowTestimonialsRecords(); ?>
+
+<?php $result = $testi->fetchAll(); ?>
+<?php $img=Mage::getBaseUrl();
+$imgr=str_replace('/index.php', '', $img); ?>
+
+<?php foreach($result as $values) { ?>
+
+<?php $img1= $values['pic']; ?>
+<blockquote><?php if($faceimg==1) { ?><img src="<?php echo $imgr.'media/'.$img1 ?>" width="<?php echo $wid; ?>" height="<?php echo $hei; ?>" /><?php } ?><p>
+<?php echo $values['message']; ?>
+<cite>&ndash;<?php echo $values['name']; ?></cite></p></blockquote>
+<?php } ?>
+<!--end testimonials-->
+<?php  ?>
+<?php }  else {
+echo "For enable testimonials go to admin->system->configuration->manv testimonials->setting->enable->yes";
+}
+?>
+
+ 

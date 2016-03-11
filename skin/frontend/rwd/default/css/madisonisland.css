@@ -540,13 +540,24 @@ ul.steps .arrow-right
 }
 #owl-home-testimonials .profile
 {
-  width: 40%;
+  width: 30%;
   float: left;
+  margin-left: 10%;
+}
+#owl-home-testimonials .profile img
+{
+  margin: auto;
+  border-radius: 100px;
+  border: solid 3px #F1F1F1;
 }
 #owl-home-testimonials .quotes
 {
-  width: 60%;
+  width: 50%;
   float: right;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
 }
 .owl-theme-cod1 .owl-pagination .owl-page span
 {

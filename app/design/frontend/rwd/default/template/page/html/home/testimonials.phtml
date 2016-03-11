@@ -1,19 +1,33 @@
+<?php $wid=$this->getTestimonialsImageWidth(); ?>
+<?php $hei=$this->getTestimonialsImageHeight(); ?>
+<?php $faceimg=$this->getTestimonialsImages(); ?>
+<?php $_mediaPath = Mage::getBaseUrl('media');
+$imgr=str_replace('/index.php', '', $img); ?>
+<?php
+$_testimonials = Mage::getModel('testimonials/testimonials')->getCollection();
+if(count($_testimonials) > 0):
+?>
 <div class="testimonials">
 	<h1>TESTIMONIALS</h1>
 	<h6>WHAT OUR CUSTOMER SAYS</h6>
 	<div id="owl-home-testimonials" class="owl-carousel">
-		<?php for($i=0;$i<5;$i++){?>
-		<div class="item">
-			<div class="profile">
-				<img src="http://placehoder.it/100x100">
-				<h5>Mrs. XYZ</h5>
-				<span>satisfied customer</span>
-			</div>
-			<div class="quotes">
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-			</div>
-		</div>
-		<?php } ?>
+		<?php foreach($_testimonials as $testimonial){
+			for($i=0;$i<10;$i++) {
+				$_img = $_mediaPath . $testimonial->getPic();
+				?>
+				<div class="item">
+					<div class="profile">
+						<img src="<?= $_img ?>" width="<?php echo $wid; ?>" height="<?php echo $hei; ?>">
+						<h5><?php echo $testimonial->getName(); ?></h5>
+						<span>Satisfied Customer</span>
+					</div>
+					<div class="quotes">
+						<p>"<?php echo $testimonial->getMessage(); ?>"</p>
+					</div>
+				</div>
+				<?php
+			}
+		} ?>
 	</div>
 </div>
 <script>
@@ -33,3 +47,4 @@
 
 	});
 </script>
+<?php endif;?>

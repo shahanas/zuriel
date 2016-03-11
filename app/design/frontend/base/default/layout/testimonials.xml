@@ -1,0 +1,27 @@
+<?xml version="1.0"?>   
+<layout version="0.1.0">   
+  <testimonials_index_index>   
+    <reference name="root">   
+      <action method="setTemplate"><template>page/2columns-left.phtml</template></action>   
+    </reference>
+    <reference name="left">   
+      <block type="testimonials/left" name="testimonials_left" template="testimonials/left.phtml"/>
+      <block type="testimonials/index" name="testimonials_index" template="testimonials/sidebar.phtml">
+    </reference>   
+    <reference name="right">   
+      <block type="testimonials/index" name="testimonials_index" template="testimonials/sidebar.phtml">   
+    </reference> 
+    <reference name="content">   
+      <block type="testimonials/index" name="testimonials_index" template="testimonials/index.phtml"/>   
+    </reference>   
+  </testimonials_index_index>  
+  <testimonials_testimonials_index>
+    <reference name="root">   
+      <action method="setTemplate"><template>page/1column.phtml</template></action>   
+    </reference>   
+    <reference name="content">   
+      <block type="testimonials/testimonials" name="testimonials_testimonials" template="testimonials/testimonials.phtml"/>   
+    </reference>
+  </testimonials_testimonials_index>  
+</layout>   
+	

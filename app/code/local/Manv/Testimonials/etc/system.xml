@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <manv translate="label" module="testimonials">
+            <label>Testimonials</label>
+            <sort_order>100</sort_order>
+        </manv>
+    </tabs>
+    <sections>
+        <manv translate="label" module="testimonials">
+            <label>manv testimonials</label>
+            <tab>manv</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <manv_group translate="label" module="testimonials">
+                    <label>Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <manv_select translate="label">
+                            <label>Enable Testimonials </label>
+                            <comment>enable testimonials to your site Yes/No </comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </manv_select>
+	
+                        <manv_width translate="label">
+                            <label>Image Width: </label>
+                            <comment><![CDATA[in px]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </manv_width>
+                        
+                                               
+			<manv_height translate="label">
+                            <label>Image Height: </label>
+                            <comment><![CDATA[in px]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </manv_height>
+			<manv_image translate="label">
+                            <label>Show face Images: </label>
+                            <comment>enable Images to your testimonials Yes/No </comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </manv_image>
+                    </fields>
+                </manv_group>
+            </groups>
+        </manv>
+    </sections>
+</config>

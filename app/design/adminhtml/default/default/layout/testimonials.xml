@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <testimonials_adminhtml_testimonialsbackend_index>
+	<reference name="content">
+	  <block type="testimonials/adminhtml_testimonialsbackend" name="testimonialsbackend" template="testimonials/testimonialsbackend.phtml"/>
+	</reference>
+  </testimonials_adminhtml_testimonialsbackend_index>
+  <testimonials_adminhtml_testimonials_index>
+	<reference name="content">
+	  <block type="testimonials/adminhtml_testimonials" name="testimonials" />
+	</reference>
+  </testimonials_adminhtml_testimonials_index>
+</layout>

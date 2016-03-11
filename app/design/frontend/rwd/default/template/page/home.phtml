@@ -69,7 +69,7 @@
 <!--                    --><?php //echo $this->getChildHtml('content') ?>
                     <?php echo $this->getLayout()->createBlock('codilar_custom/homeproducts')->setTemplate('page/html/home/products.phtml')->tohtml(); ?>
                     <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home/howitworks.phtml')->tohtml(); ?>
-                    <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home/testimonials.phtml')->tohtml(); ?>
+                    <?php echo $this->getLayout()->createBlock('testimonials/index')->setTemplate('page/html/home/testimonials.phtml')->tohtml(); ?>
                     <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home/brands.phtml')->tohtml(); ?>
                 </div>
             </div>
