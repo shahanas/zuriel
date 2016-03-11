@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="after_body_start">
+            <block type="ajaxcart/ajaxcart" name="ajaxcart-default" before="-" />
+        </reference>
+    </default>
+    
+    <ajaxcart_index_index>
+        <reference name="content">
+            <block type="ajaxcart/display" name="ajaxcart-display" template="ajaxcart/display.phtml"/>
+        </reference>
+    </ajaxcart_index_index>
+    
+    <wishlist_index_index>
+        <reference name="customer.wishlist">
+            <action method="setTemplate">
+                <template>ajaxcart/wishlist.phtml</template>
+            </action>
+        </reference>
+    </wishlist_index_index>
+	
+	<catalog_product_view>
+		 <reference name="before_body_end">
+            <block type="core/template" name="ajaxcart.product" after="-" ifconfig="ajaxcart/general/enable" template="ajaxcart/product.phtml" />
+        </reference>
+	</catalog_product_view>
+</layout>
