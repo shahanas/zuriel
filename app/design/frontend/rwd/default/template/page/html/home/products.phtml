@@ -1,0 +1,46 @@
+<?php
+$_categories = $this->getAllCategories();
+if($_categories):
+	foreach($_categories as $_category):
+		if($_products = $this->getProducts($_category)):
+for($j=0;$j<4;$j++) {
+	?>
+	<div class="home-products">
+		<h1 class="category-name"><?php echo $_category->getName() ?></h1>
+		<?php foreach ($_products as $_product): ?>
+			<div class="owl-home-products owl-carousel owl-theme">
+				<?php
+				for ($i = 0; $i < 10; $i++) {
+					?>
+					<div class="item">
+						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(250); ?>"/>
+
+						<div class="info">
+							<h4><?php echo $_product->getName() ?></h4>
+
+							<p><?php echo $this->helper('core')->currency($_product->getPrice()) ?></p>
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+			<?php
+		endforeach; ?>
+	</div>
+	<?php
+}
+		endif;
+	endforeach;
+endif;
+?>
+<script>
+	jQuery(document).ready(function() {
+
+		jQuery(".owl-home-products").owlCarousel({
+			autoPlay: 3000, //Set AutoPlay to 3 seconds
+			items : 4,
+			itemsDesktop : [1199,3],
+			itemsDesktopSmall : [979,3],
+			pagination : false
+		});
+	});
+</script>

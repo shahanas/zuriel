@@ -1,0 +1,16 @@
+.htaccess.sample
+.modgit/
+.modman/
+app/etc/local.xml.additional
+app/etc/local.xml.template
+app/etc/local.xml
+LICENSE_AFL.txt
+LICENSE.html
+LICENSE.txt
+LICENSE_EE*
+php.ini.sample
+RELEASE_NOTES.txt
+sitemap.xml
+var/*
+media/*
+.idea

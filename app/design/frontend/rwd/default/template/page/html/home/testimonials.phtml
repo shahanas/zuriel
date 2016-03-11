@@ -1,0 +1,35 @@
+<div class="testimonials">
+	<h1>TESTIMONIALS</h1>
+	<h6>WHAT OUR CUSTOMER SAYS</h6>
+	<div id="owl-home-testimonials" class="owl-carousel">
+		<?php for($i=0;$i<5;$i++){?>
+		<div class="item">
+			<div class="profile">
+				<img src="http://placehoder.it/100x100">
+				<h5>Mrs. XYZ</h5>
+				<span>satisfied customer</span>
+			</div>
+			<div class="quotes">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+			</div>
+		</div>
+		<?php } ?>
+	</div>
+</div>
+<script>
+	jQuery(document).ready(function() {
+		jQuery("#owl-home-testimonials").owlCarousel({
+			slideSpeed : 300,
+			paginationSpeed : 400,
+			singleItem:true
+			// "singleItem:true" is a shortcut for:
+			// items : 1,
+			// itemsDesktop : false,
+			// itemsDesktopSmall : false,
+			// itemsTablet: false,
+			// itemsMobile : false
+
+		});
+
+	});
+</script>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Codilar_Custom>
+            <version>1.0.0</version>
+        </Codilar_Custom>
+        <frontend>
+            <layout>
+                <updates>
+                    <codilar_custom module="Codilar_Custom">
+                        <file>codilar/custom.xml</file>
+                    </codilar_custom>
+                </updates>
+            </layout>
+        </frontend>
+    </modules>
+    <global>
+        <blocks>
+            <codilar_custom>
+                <class>Codilar_Custom_Block</class>
+            </codilar_custom>
+        </blocks>
+        <page>
+            <layouts>
+                <home_page_layout>
+                    <label>Home Page Layout</label>
+                    <template>page/home.phtml</template>
+                </home_page_layout>
+            </layouts>
+        </page>
+    </global>
+</config>
