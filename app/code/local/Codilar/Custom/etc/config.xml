@@ -4,16 +4,25 @@
         <Codilar_Custom>
             <version>1.0.0</version>
         </Codilar_Custom>
-        <frontend>
-            <layout>
-                <updates>
-                    <codilar_custom module="Codilar_Custom">
-                        <file>codilar/custom.xml</file>
-                    </codilar_custom>
-                </updates>
-            </layout>
-        </frontend>
     </modules>
+    <frontend>
+        <routers>
+            <codilarcustom>
+                <use>standard</use>
+                <args>
+                    <module>Codilar_Custom</module>
+                    <frontName>codilarcustom</frontName>
+                </args>
+            </codilarcustom>
+        </routers>
+        <layout>
+            <updates>
+                <codilar_custom module="Codilar_Custom">
+                    <file>codilar/custom.xml</file>
+                </codilar_custom>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <blocks>
             <codilar_custom>
