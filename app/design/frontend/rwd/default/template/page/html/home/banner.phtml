@@ -1,29 +1,7 @@
-<div id="owl-home-banner" class="owl-carousel owl-theme-home">
-	<div class="item"><img src="http://owlgraphic.com/owlcarousel/demos/assets/fullimage1.jpg" alt="The Last of us"></div>
-	<div class="item"><img src="http://owlgraphic.com/owlcarousel/demos/assets/fullimage2.jpg" alt="GTA V"></div>
-	<div class="item"><img src="http://owlgraphic.com/owlcarousel/demos/assets/fullimage3.jpg" alt="Mirror Edge"></div>
+<div id="owl-home-banner" class="owl-carousel owl-theme-home owl-theme-cod1">
+	<div class="item"><img src="<?php echo $this->getSkinUrl('images/home/home-slider1.jpg')?>" alt="Zuriel Homes"></div>
+	<div class="item"><img src="<?php echo $this->getSkinUrl('images/home/home-slider1.jpg')?>" alt="Zuriel Homes"></div>
 </div>
-<style>
-	#owl-home-banner .item img{
-		display: block;
-		width: 100%;
-		height: auto;
-	}
-	.owl-theme-home .owl-buttons
-	{
-		position: absolute;
-		top: 45%;
-		width: 100%;
-	}
-	.owl-theme-home .owl-buttons .owl-prev
-	{
-		float: left;
-	}
-	.owl-theme-home .owl-buttons .owl-next
-	{
-		float: right;
-	}
-</style>
 <script>
 	jQuery(document).ready(function() {
 
@@ -41,6 +19,7 @@
 			// itemsMobile : false
 
 		});
-
+		jQuery('.owl-next').html('<span class="fa fa-angle-right"></span>');
+		jQuery('.owl-prev').html('<span class="fa fa-angle-left"></span>');
 	});
 </script>

@@ -48,6 +48,7 @@
     .main-container
     {
         max-width: 100%;
+        padding: 0px !important;
     }
 </style>
 </head>
@@ -59,7 +60,7 @@
         <?php echo $this->getChildHtml('header') ?>
         <div class="home-banner">
             <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home/banner.phtml')->tohtml(); ?>
-            <?php echo $this->getLayout()->createBlock('page/html_topmenu')->setTemplate('page/html/home/topmenu.phtml')->tohtml(); ?>
+            <?php echo $this->getLayout()->createBlock('codilar_custom/topmenu')->setTemplate('page/html/home/topmenu.phtml')->tohtml(); ?>
         </div>
         <div class="main-container col1-layout">
             <div class="main">
@@ -70,7 +71,6 @@
                     <?php echo $this->getLayout()->createBlock('codilar_custom/homeproducts')->setTemplate('page/html/home/products.phtml')->tohtml(); ?>
                     <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home/howitworks.phtml')->tohtml(); ?>
                     <?php echo $this->getLayout()->createBlock('testimonials/index')->setTemplate('page/html/home/testimonials.phtml')->tohtml(); ?>
-                    <?php echo $this->getLayout()->createBlock('core/template')->setTemplate('page/html/home/brands.phtml')->tohtml(); ?>
                 </div>
             </div>
         </div>

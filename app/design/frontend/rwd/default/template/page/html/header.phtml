@@ -36,9 +36,9 @@
 
         <?php echo $this->getChildHtml('currency_switcher') ?>
         <p class="top-bar-info">
-            <a>Free Shipping On Order Min 499*</a>
-            <a>Cash On Delivery</a>
-            <a>Easy Return</a>
+            <a><i class="fa fa-plane"></i>Free Shipping On Order Min 499*</a>
+            <a><i class="fa fa-truck"></i>Cash On Delivery</a>
+            <a><i class="fa fa-undo"></i>Easy Return</a>
         </p>
         <p class="welcome-msg">
             <?php echo $this->getChildHtml('welcome') ?>
@@ -80,12 +80,6 @@
             </div>
         </div>
 
-        <!-- Navigation -->
-
-        <div id="header-nav" class="skip-content">
-            <?php echo $this->getChildHtml('topMenu') ?>
-        </div>
-
         <!-- Search -->
 
         <div id="header-search" class="skip-content">
@@ -105,6 +99,19 @@
         </div>
     </div>
 </header>
+<!-- Navigation -->
+<div id="header-nav" class="skip-content">
+    <?php echo $this->getChildHtml('topMenu') ?>
+</div>
 
 
 <?php echo $this->getChildHtml('topContainer'); ?>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.account-links a[title="Home"]').addClass('fai').addClass('fa-home');
+        jQuery('.account-links a[title="Contact"]').addClass('fai').addClass('fa-envelope-o');
+        jQuery('.account-links a[title="Login"]').addClass('fai').addClass('fa-user');
+
+        jQuery('.footer-wrapper #newsletter-validate-detail .button').addClass('fai').addClass('fa-envelope-o');
+    });
+</script>

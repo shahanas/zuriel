@@ -40,7 +40,7 @@
 ?>
 
 <a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link skip-cart <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
-    <span class="icon" id="min-cart-icon"></span>
+    <span id="min-cart-icon" class="fa fa-shopping-cart"></span>
 <!--    <span class="label">--><?php //echo $this->__('Cart'); ?><!--</span>-->
     <span class="count"><?php echo $_cartQty; ?></span>
     <a href="<?php echo $this->getUrl('checkout')?>" class="place-order">Place Order</a>

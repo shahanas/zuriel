@@ -77,6 +77,7 @@
                 <!-- Add stylesheets with media queries for use by modern browsers -->
                 <action method="addItem"><type>skin_css</type><name>owl-carousel/owl.carousel.css</name></action>
                 <action method="addItem"><type>skin_css</type><name>owl-carousel/owl.theme.css</name></action>
+                <action method="addItem"><type>skin_css</type><name>font-awesome-4.5.0/css/font-awesome.min.css</name></action>
                 <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
                 <action method="addItem"><type>skin_css</type><name>css/madisonisland.css</name><params/><if><![CDATA[<!--[if (gte IE 9) | (IEMobile)]><!-->]]></if></action>
 

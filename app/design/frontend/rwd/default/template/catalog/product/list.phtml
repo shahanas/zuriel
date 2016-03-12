@@ -120,7 +120,8 @@
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
-        <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <?php $i=0; foreach ($_productCollection as $_product):
+            for($xx=0;$xx<20;$xx++):?>
             <?php /*if ($i++%$_columnCount==0): ?>
             <?php endif*/ ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
@@ -169,14 +170,16 @@
             </li>
             <?php /*if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
             <?php endif*/ ?>
-        <?php endforeach ?>
+        <?php
+        endfor;
+        endforeach ?>
     </ul>
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 
-    <div class="toolbar-bottom">
-        <?php echo $this->getToolbarHtml() ?>
-    </div>
+<!--    <div class="toolbar-bottom">-->
+<!--        --><?php //echo $this->getToolbarHtml() ?>
+<!--    </div>-->
 </div>
 <?php endif; ?>
 <?php

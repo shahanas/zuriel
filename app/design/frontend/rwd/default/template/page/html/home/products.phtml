@@ -8,7 +8,7 @@ for($j=0;$j<4;$j++) {
 	<div class="home-products">
 		<h1 class="category-name"><?php echo $_category->getName() ?></h1>
 		<?php foreach ($_products as $_product): ?>
-			<div class="owl-home-products owl-carousel owl-theme">
+			<div class="owl-home-products owl-carousel owl-theme-cod1 owl-theme-products">
 				<?php
 				for ($i = 0; $i < 10; $i++) {
 					?>
@@ -36,11 +36,13 @@ endif;
 	jQuery(document).ready(function() {
 
 		jQuery(".owl-home-products").owlCarousel({
-			autoPlay: 3000, //Set AutoPlay to 3 seconds
 			items : 4,
 			itemsDesktop : [1199,3],
 			itemsDesktopSmall : [979,3],
-			pagination : false
+			pagination : false,
+			navigation : true
 		});
+		jQuery('.owl-next').html('<span class="fa fa-angle-right"></span>');
+		jQuery('.owl-prev').html('<span class="fa fa-angle-left"></span>');
 	});
 </script>
