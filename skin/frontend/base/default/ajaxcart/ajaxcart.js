@@ -291,6 +291,18 @@ var ajaxcart = {
         {
             $('ajax-cart-popup').removeClassName('hidden');
             $('ajax-cart-popup-overlay').removeClassName('hidden');
+            discountFormAjax = new VarienForm('discount-coupon-form-ajax');
+            discountFormAjax.submit = function (isRemove) {
+                event.preventDefault();
+                if (isRemove) {
+                    $('coupon_code').removeClassName('required-entry');
+                    $('remove-coupone').value = "1";
+                } else {
+                    $('coupon_code').addClassName('required-entry');
+                    $('remove-coupone').value = "0";
+                }
+                return VarienForm.prototype.submit.bind(discountFormAjax)();
+            }
         }
 
     },
@@ -404,6 +416,7 @@ var setLocation = (function() {
     };
 })();
 setPLocation = setLocation;
+var discountFormAjax;
 document.observe("dom:loaded", function() {
     ajaxcart.initialize();
 });

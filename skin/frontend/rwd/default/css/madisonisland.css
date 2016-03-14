@@ -950,6 +950,8 @@ nav#nav {
   margin: 0px;
   padding: 0px;
   border: solid 1px #14BBB5;
+  width: 200px;
+  float: left;
 }
 .ajax-checkout-cart #discount-coupon-form-ajax .button-wrapper > button,.ajax-checkout-cart.cart .giftcard .button-wrapper > button
 {
@@ -977,7 +979,7 @@ nav#nav {
 {
   float: right;
 }
-.ajax-checkout-cart .total,.checkout-types.bottom
+.ajax-checkout-cart .total,.ajax-checkout-cart .checkout-types.bottom
 {
   padding: 5px 40px 25px 8px;
   text-align: left;
@@ -1089,4 +1091,82 @@ nav#nav {
   opacity: 0.4;
   z-index: 9999;
   cursor: pointer;
+}
+.add-to-cart-wrapper .add-to-box
+{
+  border: solid 1px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.add-to-cart-wrapper .add-to-cart .qty-wrapper
+{
+  width: 100%;
+}
+.product-view .add-to-cart .qty-wrapper label
+{
+  line-height: 30px;
+}
+.product-view .add-to-cart .qty-wrapper select.qty
+{
+  border-radius: 10px;
+  padding: 0px 5px;
+  height: 30px;
+}
+.product-view .add-to-links .link-wishlist
+{
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  padding: 0px 13px;
+  float: left;
+  min-width: 160px;
+  width: 100%;
+  white-space: normal;
+}
+.product-collateral .toggle-tabs {
+  display: none;
+}
+.product-collateral > dl > dt
+{
+  font-size: 20px;
+}
+.product-collateral > dl > dt,.product-collateral > dl > dd
+{
+  display: block !important;
+  border: none;
+}
+.pincode-validation-box{
+  border: solid 1px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.pincode-validation input
+{
+  width: 80px;
+  height: 30px;
+}
+.pincode-validation button
+{
+  height: 30px;
+  margin-left: -5px;
+  margin-top: -2px;
+  border: solid 1px darkgrey;
+  border-left: 0px;
+  line-height: 0px;
+}
+.pincode-validation .message{
+  display: block;
+  margin: 5px 0px;
+  border: dotted 1px;
+}
+.pincode-validation .message.available
+{
+  border-color: green;
+  color: green;
+}
+.pincode-validation .message.not-available
+{
+  border-color: red;
+  color: red;
 }

@@ -59,7 +59,16 @@
                     <?php if ($_product->isSaleable()): ?>
                     <div class="qty-wrapper">
                         <?php if ($_item->isSaleable()) : ?>
-                            <input id="super_group_<?php echo $_item->getId(); ?>" type="text" pattern="\d*" name="super_group[<?php echo $_item->getId() ?>]" maxlength="12" value="<?php echo $_item->getQty()*1 ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
+<!--                            <input id="super_group_--><?php //echo $_item->getId(); ?><!--" type="text" pattern="\d*" name="super_group[--><?php //echo $_item->getId() ?><!--]" maxlength="12" value="--><?php //echo $_item->getQty()*1 ?><!--" title="--><?php //echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?><!--" class="input-text qty" />-->
+                            <select id="super_group_<?php echo $_item->getId(); ?>" pattern="\d*" name="super_group[<?php echo $_item->getId() ?>]" maxlength="12" value="<?php echo $_item->getQty()*1 ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-select qty" >
+                                <?php
+                                $i=1;
+                                $_max = 10;
+                                for($i=1;$i<$_max;$i++):
+                                    ?>
+                                    <option value="<?=$i?>"><?=$i?></option>
+                                <?php endfor;?>
+                            </select>
                             <label for="super_group_<?php echo $_item->getId(); ?>" class="qty-label">
                                 <?php echo $this->__('Quantity'); ?>
                             </label>

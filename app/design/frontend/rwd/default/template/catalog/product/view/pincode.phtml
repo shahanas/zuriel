@@ -1,0 +1,6 @@
+<div class="pincode-validation">
+	<h3>Check Availability</h3>
+	<input type="text" id="pincode" name="pincode" maxlength="6" onkeypress='return event.charCode >= 48 && event.charCode <= 57' value="<?php echo $this->getPincode()?>"/>
+	<button id="pincode-submit" class="button btn-pincode" data-url="<?php echo $this->getUrl('codilarcustom/ajaxcart/checkpincode')?>" onclick="checkDelivery()">Check</button>
+	<span class="message">Check delivery availability</span>
+</div>

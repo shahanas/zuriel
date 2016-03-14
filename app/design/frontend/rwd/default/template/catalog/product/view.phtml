@@ -103,6 +103,9 @@
                         <?php echo $this->getChildHtml('addto') ?>
                         <?php echo $this->getChildHtml('sharing') ?>
                     </div>
+                    <div class="pincode-validation-box">
+                        <?php echo $this->getChildHtml('pincode') ?>
+                    </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">

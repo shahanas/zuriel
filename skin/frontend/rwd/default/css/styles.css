@@ -4991,12 +4991,13 @@ p.product-name a:hover {
   border: 0;
 }
 .product-view .product-shop {
-  width: 50%;
-  float: right;
+  width: 35%;
+  float: left;
 }
 .product-view .product-shop .product-name {
   display: none;
   float: left;
+  width: 100%;
 }
 .product-view .product-shop .product-name .h1 {
   float: left;
@@ -5009,8 +5010,8 @@ p.product-name a:hover {
   width: 70%;
 }
 .product-view .product-shop .price-info {
-  float: right;
-  padding-left: 15px;
+  float: left;
+  padding-left: 0px;
   text-align: right;
 }
 .product-view .product-shop .extra-info,
@@ -5076,7 +5077,7 @@ p.product-name a:hover {
 }
 .product-view .add-to-cart-wrapper,
 .product-view .block-related {
-  width: 50%;
+  width: 25%;
   float: right;
   clear: right;
 }
@@ -5117,7 +5118,7 @@ p.product-name a:hover {
   }
 }
 .product-img-box {
-  width: 50%;
+  width: 40%;
   float: left;
 }
 .product-img-box .product-name h1 {

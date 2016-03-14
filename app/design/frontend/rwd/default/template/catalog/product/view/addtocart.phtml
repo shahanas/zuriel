@@ -30,8 +30,17 @@
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
         <div class="qty-wrapper">
-            <label for="qty"><?php echo $this->__('Qty:') ?></label>
-            <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
+            <label for="qty"><?php echo $this->__('Quantity:') ?></label>
+            <select pattern="\d*" name="qty" id="qty" maxlength="12" value="<?php echo max($this->getProductDefaultQty() * 1, 1) ?>"  title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-select qty" >
+                <?php
+                $i=1;
+                $_max = 10;
+                for($i=1;$i<$_max;$i++):
+                ?>
+                    <option value="<?=$i?>"><?=$i?></option>
+                <?php endfor;?>
+            </select>
+<!--            <input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="--><?php //echo max($this->getProductDefaultQty() * 1, 1) ?><!--" title="--><?php //echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?><!--" class="input-text qty" />-->
         </div>
         <?php endif; ?>
         <div class="add-to-cart-buttons">
