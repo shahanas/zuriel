@@ -19,33 +19,32 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-
-/**
- * Shoping cart sidebar
- *
- * @see Mage_Checkout_Block_Cart_Sidebar
- */
-
 ?>
-
 <?php
-    $_cartQty = $this->getSummaryCount();
-    if(empty($_cartQty)) {
-        $_cartQty = 0;
-    }
+/**
+ * Shopping cart totals template
+ *
+ * @see Mage_Checkout_Block_Cart_Totals
+ * @var $this Mage_Checkout_Block_Cart_Totals
+ */
 ?>
-
-<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link-x skip-cart <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>" onclick="showCart('header-cart');">
-    <span id="min-cart-icon" class="fa fa-shopping-cart"></span>
-<!--    <span class="label">--><?php //echo $this->__('Cart'); ?><!--</span>-->
-    <span class="count"><?php echo $_cartQty; ?></span>
-    <a href="<?php echo $this->getUrl('checkout')?>" class="place-order">Place Order</a>
-</a>
-
-<div id="header-cart" class="block block-cart skip-content">
-    <?php echo $this->getChildHtml('minicart_content');?>
-</div>
+<?php if ($this->canApplyMsrp()): ?>
+    <div class="cart-msrp-totals"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></div>
+<?php else: ?>
+    <div id="shopping-cart-totals-table">
+        <?php
+        foreach($this->getTotals() as $_totals)
+        {
+            ?>
+            <div class="total">
+                <span class="title"><?=$_totals->getData('code')?></span>
+                <span class="value"><?php echo $this->helper('core')->currency($_totals->getData('value'))?></span>
+            </div>
+        <?php
+        }?>
+    </div>
+<?php endif; ?>

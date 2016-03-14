@@ -1,5 +1,6 @@
 <?php
 $_categories = $this->getAllCategories();
+$_helper = $this->helper('catalog/output');
 if($_categories):
 	foreach($_categories as $_category):
 		if($_products = $this->getProducts($_category)):
@@ -13,12 +14,35 @@ for($j=0;$j<4;$j++) {
 				for ($i = 0; $i < 10; $i++) {
 					?>
 					<div class="item">
-						<img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(250); ?>"/>
-
+<!--						<a href="--><?php //echo $_product->getProductUrl() ?><!--" title="--><?php //echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?><!--" class="product-image-x">-->
+							<?php $_imgSize = 210; ?>
+							<img id="product-collection-image-<?php echo $_product->getId(); ?>"
+							     src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
+							     alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+<!--						</a>-->
 						<div class="info">
-							<h4><?php echo $_product->getName() ?></h4>
-
-							<p><?php echo $this->helper('core')->currency($_product->getPrice()) ?></p>
+							<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+							<?php echo $this->getPriceHtml($_product, true) ?>
+						</div>
+						<?php if($_product->getRatingSummary()): ?>
+							<?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+						<?php endif; ?>
+						<div class="actions">
+							<?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
+								<button type="button" title="<?php echo $this->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+							<?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
+								<a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
+							<?php else: ?>
+								<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+							<?php endif; ?>
+							<ul class="add-to-links">
+								<?php if ($this->helper('wishlist')->isAllow()) : ?>
+									<li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+								<?php endif; ?>
+								<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+									<li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+								<?php endif; ?>
+							</ul>
 						</div>
 					</div>
 				<?php } ?>

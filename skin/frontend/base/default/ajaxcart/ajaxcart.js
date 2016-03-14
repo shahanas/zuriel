@@ -262,12 +262,15 @@ var ajaxcart = {
 
     updateBlocks: function(blocks) {
         var _this = this;
+        var cart_flag = false;
 
         if(blocks) {
             try{
                 blocks.each(function(block){
                     if(block.key) {
                         var dom_selector = block.key;
+                        if(block.key == '#ajax-cart-popup')
+                            cart_flag = true;
                         if($$(dom_selector)) {
                             $$(dom_selector).each(function(e){
                                 $(e).update(block.value);
@@ -283,6 +286,11 @@ var ajaxcart = {
             } catch(e) {
                 console.log(e);
             }
+        }
+        if(cart_flag == true)
+        {
+            $('ajax-cart-popup').removeClassName('hidden');
+            $('ajax-cart-popup-overlay').removeClassName('hidden');
         }
 
     },
@@ -395,9 +403,21 @@ var setLocation = (function() {
         }
     };
 })();
-
 setPLocation = setLocation;
-
 document.observe("dom:loaded", function() {
     ajaxcart.initialize();
 });
+function showCart(id)
+{
+    event.preventDefault();
+    if($(id).hasClassName('skip-active'))
+        $(id).removeClassName('skip-active');
+    else
+        $(id).addClassName('skip-active');
+}
+function closeCart()
+{
+    $('ajax-cart-popup').innerHTML = "";
+    $('ajax-cart-popup').addClassName('hidden');
+    $('ajax-cart-popup-overlay').addClassName('hidden');
+}

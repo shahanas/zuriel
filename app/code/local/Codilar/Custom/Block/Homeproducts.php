@@ -1,5 +1,5 @@
 <?php
-class Codilar_Custom_Block_Homeproducts extends Mage_Core_Block_Template
+class Codilar_Custom_Block_Homeproducts extends Mage_Catalog_Block_Product_List
 {
 	public function getAllCategories()
 	{
